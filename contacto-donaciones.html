@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Donaciones - FUNDACIRE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="FUNDACIRE Logo">
+                <div class="logo-text">
+                    <span class="title">Ciudad Refugio</span>
+                    <span class="subtitle">FUNDACIRE</span>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto-donaciones.html" class="active">Contacto</a></li>
+                    <li><a href="#donar" class="btn-donate-nav">Donar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-padding">
+        <div class="contact-donation-grid">
+            
+            <section class="form-container bg-pastel-blue-light">
+                <h2>Contáctanos</h2>
+                <p>Déjanos tu mensaje o consulta y te responderemos a la brevedad.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" required placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" rows="5" required placeholder="Escribe tu consulta aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                </form>
+            </section>
+
+            <section id="donar" class="form-container bg-pastel-gold-light">
+                <h2>Haz tu Donación</h2>
+                <p>Elige tu método preferido para apoyar nuestros proyectos:</p>
+                
+                <div class="donation-methods">
+                    <div class="bank-details">
+                        <h4><i class="fa-solid fa-building-columns"></i> Transferencia Bancaria</h4>
+                        <p><strong>Banco:</strong> Banco Pichincha</p>
+                        <p><strong>Cuenta Corriente:</strong> N° 2100XXXXXX</p>
+                        <p><strong>Titular:</strong> Fundación Ciudad Refugio</p>
+                        <p><strong>RUC:</strong> 1790000000001</p>
+                    </div>
+
+                    <div class="qr-box text-center">
+                        <h4><i class="fa-solid fa-qrcode"></i> Escanea para Aporte Directo</h4>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=FUNDACIRE_DONACION" alt="Código QR Donaciones" class="qr-code">
+                        <p class="small-text">Válido para aplicaciones bancarias móviles</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <p>Mantente al tanto de nuestros proyectos sociales en redes:</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Ubicación</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Quito, Ecuador</p>
+                <p><i class="fa-solid fa-envelope"></i> contacto@fundacire.org</p>
+                <p><i class="fa-solid fa-phone"></i> +593 99 999 9999</p>
+            </div>
+            <div class="footer-col">
+                <h4>Ayuda Rápida</h4>
+                <ul class="footer-links">
+                    <li><a href="contacto-donaciones.html">Preguntas Frecuentes</a></li>
+                    <li><a href="contacto-donaciones.html">Contáctanos Directo</a></li>
+                    <li><a href="#donar" class="highlight-link">DONAR AHORA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fundación Ciudad Refugio (FUNDACIRE). Todos los Derechos Reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
