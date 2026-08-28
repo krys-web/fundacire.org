@@ -139,7 +139,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     color: white;
     margin-top: 60px;
 }
@@ -150,22 +149,61 @@ body {
     background: linear-gradient(rgba(30, 58, 138, 0.65), rgba(0, 0, 0, 0.6));
 }
 
-.hero-content {
+.hero-container {
     position: relative;
     z-index: 1;
-    max-width: 700px;
-    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.hero-logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo img {
+    max-width: 260px;
+    height: auto;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    max-width: 650px;
 }
 
 .hero-content h1 {
     font-size: 2.8rem;
     margin-bottom: 10px;
+    line-height: 1.2;
 }
 
 .hero-content p {
     font-size: 1.3rem;
     margin-bottom: 25px;
     font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-logo img {
+        max-width: 180px;
+    }
 }
 
 /* Botones */
@@ -244,3 +282,103 @@ body {
 .footer-links a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 8px; }
 .highlight-link { color: var(--primary-gold) !important; font-weight: bold; }
 .footer-bottom { border-top: 1px solid #1e293b; text-align: center; padding: 20px 0; font-size: 0.85rem; }
+
+/* Botón Flotante de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    color: white;
+}
+
+/* Estilos para Páginas Independientes Contacto y Donaciones */
+.subtitle-page {
+    color: var(--text-muted);
+    margin-top: -10px;
+    margin-bottom: 40px;
+}
+
+.contact-page-grid,
+.donations-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.contact-info-container,
+.donation-card {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    background: white;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.header-icon {
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+}
+
+.bank-details-list p {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 8px;
+}
+
+.qr-container {
+    margin: 20px 0;
+}
+
+.transparency-banner {
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid var(--primary-blue);
+}
+
+.transparency-banner h3 {
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
