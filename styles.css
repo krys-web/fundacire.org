@@ -382,3 +382,67 @@ body {
     color: var(--primary-blue);
     margin-bottom: 8px;
 }
+
+/* --- Botón Webmail y Tooltip en la Navbar --- */
+.nav-webmail-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-webmail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: var(--pastel-blue-bg);
+    color: var(--primary-blue) !important;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.nav-webmail-btn:hover {
+    background-color: var(--primary-blue);
+    color: white !important;
+}
+
+/* Tooltip (Mensaje Desplegable) */
+.webmail-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    background-color: var(--text-dark);
+    color: white;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+/* Flecha del Tooltip */
+.webmail-tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--text-dark) transparent;
+}
+
+/* Despliegue al hacer Hover */
+.nav-webmail-wrapper:hover .webmail-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
