@@ -29,6 +29,12 @@ body {
     line-height: 1.6;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -49,6 +55,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100vw;
     background-color: var(--bg-white);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
@@ -62,11 +69,13 @@ body {
 
 .nav-container {
     max-width: 1140px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
+    position: relative;
 }
 
 .logo {
@@ -134,24 +143,30 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 80vh;
+    min-height: 85vh;
     background: url('banner.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     margin-top: 60px;
+    padding: 40px 0 0 0;
 }
 
 .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(30, 58, 138, 0.65), rgba(0, 0, 0, 0.6));
+    display: none;
+}
+
+.hero-main-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
 .hero-container {
-    position: relative;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -178,16 +193,87 @@ body {
     max-width: 650px;
 }
 
-.hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-    line-height: 1.2;
+/* Título FUNDACIRE en color azul del logo e incrementado */
+.hero-content h1.hero-title-blue {
+    font-size: 7.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+    line-height: 1.1;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 25px;
-    font-weight: 300;
+.hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #f1f5f9;
+}
+
+/* Contenedor Blanco Translucido a todo el ancho */
+.hero-translucent-box {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.147);
+    backdrop-filter: blur(5px);
+    padding: 25px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-translucent-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-translucent-content {
+    max-width: 650px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+/* Estilos específicos de cada párrafo */
+
+/* 1er párrafo: Subtítulo Azul */
+.hero-translucent-box p.p-subtitle-blue {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+/* 2do párrafo: Negro Negrilla */
+.hero-translucent-box p.p-bold-dark {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+/* 3ro y 4to párrafo: Azul Cursivo */
+.hero-translucent-box p.p-italic-blue {
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.hero-bottom-button-container {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%;
+    margin-top: 20px;   
+    margin-bottom: 40px; 
+}
+
+.hero-bottom-button-wrapper {
+    max-width: 650px; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 @media (max-width: 768px) {
@@ -201,8 +287,35 @@ body {
         text-align: center;
     }
 
+    .hero-content h1.hero-title-blue {
+        font-size: 3.2rem;
+    }
+
     .hero-logo img {
         max-width: 180px;
+    }
+
+    .hero-translucent-box .container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-translucent-container {
+        justify-content: center;
+    }
+
+    .hero-translucent-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-bottom-button-container {
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .hero-bottom-button-wrapper {
+        justify-content: center;
     }
 }
 
@@ -448,10 +561,9 @@ body {
 }
 
 /* ==========================================
-   ESTILOS RESPONSIVOS (Tablets y Móviles)
+   ESTILOS RESPONSIVOS
    ========================================== */
 
-/* Botón Hamburguesa (Oculto por defecto en Desktop) */
 .menu-toggle {
     display: none;
     background: transparent;
@@ -461,110 +573,57 @@ body {
     cursor: pointer;
     padding: 5px;
     z-index: 1002;
-    outline: none;
 }
 
-/* Tabletas y Pantallas Medianas (<= 992px) */
 @media (max-width: 992px) {
+    /* 1. Muestra el botón hamburguesa */
     .menu-toggle {
-        display: block; /* Se mantiene visible de forma permanente en responsive */
+        display: block !important;
     }
 
-    .navbar nav {
+    /* 2. Ocultar OBLIGATORIAMENTE la navegación y la lista en móviles */
+    .navbar nav,
+    #navMenu,
+    .nav-links {
+        display: none !important;
+    }
+
+    /* 3. AL PRESIONAR LA HAMBURGUESA: Desplegar el menú hacia abajo */
+    #navMenu.active,
+    .navbar nav.active {
+        display: block !important;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--bg-white);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        display: none; /* Oculto por defecto usando display para evitar destellos */
         padding: 20px 0;
         border-top: 1px solid #f1f5f9;
+        z-index: 1001;
     }
 
-    /* Clase que activa la visibilidad al presionar el botón */
-    .navbar nav.active {
-        display: block !important;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 18px;
+    /* 4. Mostrar la lista de opciones verticalmente dentro del menú desplegado */
+    #navMenu.active .nav-links,
+    .navbar nav.active .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
         align-items: center;
+        gap: 15px;
         width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
-    /* Ocultar tooltip en móviles y mostrar el texto normal o mantener ícono centrado */
-    .webmail-tooltip {
-        display: none !important;
-    }
-
-    /* Ajustes Grid Secciones y Blog */
-    .grid-2 {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .blog-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Celulares y Pantallas Pequeñas (<= 768px) */
-@media (max-width: 768px) {
-    .page-padding {
-        padding-top: 100px;
-        padding-bottom: 40px;
-    }
-
-    /* Banner Hero */
-    .hero {
-        height: auto;
-        min-height: 70vh;
-        padding: 60px 0;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1.05rem;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .hero-buttons .btn {
+    .nav-links li {
         width: 100%;
         text-align: center;
     }
 
-    /* Formulario y Donaciones */
-    .contact-page-grid,
-    .donations-page-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Botón flotante WhatsApp */
-    .whatsapp-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 26px;
-        bottom: 18px;
-        right: 18px;
-    }
-
-    /* Footer */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .social-links {
-        justify-content: center;
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
     }
 }
