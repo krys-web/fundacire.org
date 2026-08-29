@@ -446,3 +446,125 @@ body {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* ==========================================
+   ESTILOS RESPONSIVOS (Tablets y Móviles)
+   ========================================== */
+
+/* Botón Hamburguesa (Oculto por defecto en Desktop) */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1002;
+    outline: none;
+}
+
+/* Tabletas y Pantallas Medianas (<= 992px) */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block; /* Se mantiene visible de forma permanente en responsive */
+    }
+
+    .navbar nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        display: none; /* Oculto por defecto usando display para evitar destellos */
+        padding: 20px 0;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    /* Clase que activa la visibilidad al presionar el botón */
+    .navbar nav.active {
+        display: block !important;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Ocultar tooltip en móviles y mostrar el texto normal o mantener ícono centrado */
+    .webmail-tooltip {
+        display: none !important;
+    }
+
+    /* Ajustes Grid Secciones y Blog */
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Celulares y Pantallas Pequeñas (<= 768px) */
+@media (max-width: 768px) {
+    .page-padding {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    /* Banner Hero */
+    .hero {
+        height: auto;
+        min-height: 70vh;
+        padding: 60px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Formulario y Donaciones */
+    .contact-page-grid,
+    .donations-page-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Botón flotante WhatsApp */
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        bottom: 18px;
+        right: 18px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
