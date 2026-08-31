@@ -354,11 +354,17 @@ html, body {
 }
 
 .card {
-    background: white;
+    background: var(--bg-white);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-    border-top: 4px solid var(--primary-blue);
+    box-shadow: var(--shadow-md);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 .card-icon { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 15px; }
@@ -561,7 +567,7 @@ html, body {
 }
 
 /* ==========================================
-   ESTILOS RESPONSIVOS
+   ESTILOS RESPONSIVOS (MENÚ HAMBURGUESA)
    ========================================== */
 
 .menu-toggle {
@@ -576,21 +582,23 @@ html, body {
 }
 
 @media (max-width: 992px) {
-    /* 1. Muestra el botón hamburguesa */
+    /* 1. Mostrar el botón hamburguesa */
     .menu-toggle {
         display: block !important;
     }
 
-    /* 2. Ocultar OBLIGATORIAMENTE la navegación y la lista en móviles */
-    .navbar nav,
-    #navMenu,
+    /* 2. Ocultar la lista de enlaces por defecto en móvil */
     .nav-links {
         display: none !important;
     }
 
-    /* 3. AL PRESIONAR LA HAMBURGUESA: Desplegar el menú hacia abajo */
-    #navMenu.active,
-    .navbar nav.active {
+    /* 3. Ocultar el contenedor del menú nav por defecto */
+    #navMenu {
+        display: none;
+    }
+
+    /* 4. Cuando el menú tiene la clase .active (al hacer clic en la hamburguesa) */
+    #navMenu.active {
         display: block !important;
         position: absolute;
         top: 100%;
@@ -603,9 +611,8 @@ html, body {
         z-index: 1001;
     }
 
-    /* 4. Mostrar la lista de opciones verticalmente dentro del menú desplegado */
-    #navMenu.active .nav-links,
-    .navbar nav.active .nav-links {
+    /* 5. Mostrar y apilar verticalmente los enlaces cuando está activo */
+    #navMenu.active .nav-links {
         display: flex !important;
         flex-direction: column !important;
         align-items: center;
@@ -626,4 +633,83 @@ html, body {
         padding: 10px 0;
         width: 100%;
     }
+}
+
+/* Estilos para los 5 segmentos alternados de Nosotros */
+.about-segments {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Espaciado entre segmentos */
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-row .text-block,
+.about-row .image-block {
+    flex: 1;
+}
+
+/* Inversión de dirección para bloques pares (Texto a la izquierda, Imagen a la derecha) */
+.about-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-row .image-block img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+}
+
+.about-row .text-block h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.about-row .text-block p {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Adaptación responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .about-row,
+    .about-row.reverse {
+        flex-direction: column; /* En pantallas pequeñas se muestra imagen arriba y texto abajo */
+        gap: 20px;
+    }
+
+    .about-segments {
+        gap: 40px;
+    }
+}
+
+/* ===================================================
+   ANIMACIONES DE SCROLL PARA LAS TARJETAS (NOSOTROS)
+   =================================================== */
+
+/* Estado inicial por defecto: Desplazada desde la izquierda */
+.about-row {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+/* Tarjetas con clase .reverse (Foto a la derecha): Desplazada desde la derecha */
+.about-row.reverse {
+    transform: translateX(80px);
+}
+
+/* Estado final cuando el usuario hace scroll y entra en pantalla */
+.about-row.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
