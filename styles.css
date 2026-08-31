@@ -633,6 +633,14 @@ html, body {
         padding: 10px 0;
         width: 100%;
     }
+
+    .about-segments {
+        gap: 40px;
+    }
+
+    .about-row .image-block img {
+        height: 280px; 
+    }
 }
 
 /* Estilos para los 5 segmentos alternados de Nosotros */
@@ -678,16 +686,51 @@ html, body {
     line-height: 1.7;
 }
 
-/* Adaptación responsive para dispositivos móviles */
 @media (max-width: 768px) {
     .about-row,
     .about-row.reverse {
-        flex-direction: column; /* En pantallas pequeñas se muestra imagen arriba y texto abajo */
+        flex-direction: column; 
         gap: 20px;
     }
 
     .about-segments {
         gap: 40px;
+    }
+
+    .about-row,
+    .about-row.reverse {
+        flex-direction: column !important;
+        gap: 18px;
+    }
+
+    .about-row .image-block {
+        width: 100%;
+        max-width: 280px; 
+        margin: 0 auto;
+    }
+
+    .about-row .image-block img {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .about-row .text-block {
+        text-align: center; 
+        width: 100%;
+    }
+
+    .about-row .text-block h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    .about-row,
+    .about-row.reverse {
+        transform: translateY(30px); 
+    }
+
+    .about-row.visible {
+        transform: translateY(0);
     }
 }
 
