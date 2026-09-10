@@ -651,8 +651,9 @@ html, body {
 
 .about-row .image-block img {
     width: 100%;
-    height: 320px;
-    object-fit: cover;
+    height: 350px; 
+    object-fit: contain; 
+    background-color: var(--bg-light); 
     border-radius: 10px;
     box-shadow: var(--shadow-md);
 }
@@ -800,7 +801,8 @@ html, body {
     }
 
     .about-row .image-block img {
-        height: 250px;
+        height: 280px; 
+        object-fit: contain; 
     }
 
     .about-row .text-block {
