@@ -164,226 +164,310 @@
     </section>
 
     <!-- Contenido Principal -->
+ <!-- Contenido Principal -->
     <main class="container page-padding">
         
-        <!-- Sección actualizada con id="somos" para el botón "Quienes somos" -->
         <section id="somos">
-            <h1 class="page-title text-center">Comité Eejecutivo</h1>
-            <div class="about-segments">
-                
-                <!-- Tarjeta 1: Foto a la izquierda | Texto a la derecha -->
-                <article class="about-row">
-                    <div class="image-block">
-                        <img src="img/Rafael Medrano - Presidente.jpeg" alt="Presidente Vitalicio">
-                    </div>
-                    <div class="text-block">
-                        <h2>Rev. Dr. Rafael Medrano</h2>
-                        <p>Presidente Vitalicio</p>
-                        <p>S3130 Irwin Ave. Suite 9F.</p>
-                        <p>PBronx , NY, 10463.</p>
-                        <p>Funciones : </p>
-                        <p>*************************************************</p>
-                    </div>
-                </article>
+            <h1 class="page-title text-center">COMITÉ EJECUTIVO</h1>
+            <br>
+            
+            <!-- ÁRBOL JERÁRQUICO: Nivel 1 (Presidente solo arriba) -->
+            <div class="hierarchy-tree">
+                <div class="hierarchy-top-node">
+                    <article class="member-card-vertical">
+                        <div class="card-image-wrapper">
+                            <img src="img/Rafael Medrano - Presidente.jpeg" alt="Presidente Vitalicio">
+                        </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Rev. Dr. Rafael Medrano</h2>
+                            <div class="member-badge">Presidente Vitalicio</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>rmedrano@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
 
-                <!-- Tarjeta 2: Texto a la izquierda | Foto a la derecha -->
-                <article class="about-row reverse">
-                    <div class="image-block">
-                        <img src="img/Raúl Romero - Vicepresidente.jpeg" alt="Vicepresidente">
-                    </div>
-                    <div class="text-block">
-                        <h2>Raúl Romero</h2>
-                        <p>Vicepresidente</p>
-                        <p>575 Exterior St. Apt. 1030 </p>
-                        <p>Bronx, NY 10451.</p>
-                        <p>Funciones : </p>
-                        <p>**************************************************</p>
-                    </div>
-                </article>
+                <!-- Línea de conexión visual del árbol (Opcional pero elegante) -->
+                <div class="tree-connector"></div>
 
-                <!-- Tarjeta 3: Foto a la izquierda | Texto a la derecha -->
-                <article class="about-row">
-                    <div class="image-block">
-                        <img src="img/Ingrid Santos.jpeg" alt="Secretaria">
-                    </div>
-                    <div class="text-block">
-                        <h2>Ingrid Santos</h2>
-                        <p>Secretaria</p>
-                        <p>505 W, 187 St. Apt. 43</p>
-                        <p>New York, NY. 10033.</p>
-                        <p>Funciones : </p>
-                        <p>***************************************************</p>
-                    </div>
-                </article>
+                <!-- Nivel 2: Grilla de 3 columnas para el resto del Comité Ejecutivo -->
+                <div class="hierarchy-grid-3">
+                    
+                    <!-- Tarjeta 2: Vicepresidente -->
+                    <article class="member-card-vertical">
+                        <div class="card-image-wrapper">
+                            <img src="img/Raúl Romero - Vicepresidente.jpg" alt="Vicepresidente">
+                        </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Raúl Romero</h2>
+                            <div class="member-badge">Vicepresidente</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>rromero@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Tarjeta 4: Texto a la izquierda | Foto a la derecha -->
-                <article class="about-row reverse">
-                    <div class="image-block">
-                        <img src="img/Yris Arias.jpeg" alt="Tesorera">
-                    </div>
-                    <div class="text-block">
-                        <h2>Yris Arias Lasose De Montas</h2>
-                        <p>Tesorera</p>
-                        <p>465 W 152nd. St. Apto. BSM1</p>
-                        <p>New York, NY 10031-1830</p>
-                        <p>Funciones : </p>
-                        <p>****************************************************</p>
-                    </div>
-                </article>
+                    <!-- Tarjeta 6: Capellán -->
+                    <article class="member-card-vertical">
+                        <div class="card-image-wrapper">
+                            <img src="img/Pércido Garces - Capellán.jpeg" alt="Capellán">
+                        </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Rev. Pérsido Garcés</h2>
+                            <div class="member-badge">Capellán</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>pgarces@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Tarjeta 5: Foto a la izquierda | Texto a la derecha -->
-                <article class="about-row">
-                    <div class="image-block">
-                        <img src="user.jpeg" alt="Sindico">
-                    </div>
-                    <div class="text-block">
-                        <h2>Félix Pérez </h2>
-                        <p>Síndico</p>
-                        <p>355 E. 143 St. Apto. 14 B</p>
-                        <p>Bronx, NY 10454</p>
-                        <p>Funciones : </p>
-                        <p>****************************************************</p>
-                    </div>
-                </article>
+                    <!-- Tarjeta 3: Secretaria -->
+                    <article class="member-card-vertical">
+                        <div class="card-image-wrapper">
+                            <img src="img/Ingrid Santos.jpeg" alt="Secretaria">
+                        </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Ingrid Santos</h2>
+                            <div class="member-badge">Secretaria</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>ingrids@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Tarjeta 6: Texto a la izquierda | Foto a la derecha -->
-                <article class="about-row reverse">
-                    <div class="image-block">
-                        <img src="img/Pércido Garces - Capellán.jpeg" alt="Capellán">
-                    </div>
-                    <div class="text-block">
-                        <h2>Rev. Pérsido Garcés</h2>
-                        <p>Capellán</p>
-                        <p>91 Fortwashington Ave. Apto. 7</p>
-                        <p>New York, NY 10032</p>
-                        <p>Funciones : </p>
-                        <p>*****************************************************</p>
-                    </div>
-                </article>
+                    <!-- Tarjeta 4: Tesorera -->
+                    <article class="member-card-vertical">
+                        <div class="card-image-wrapper">
+                            <img src="img/Yris Arias.jpeg" alt="Tesorera">
+                        </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Yris Arias Lasose De Montas</h2>
+                            <div class="member-badge">Tesorera</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>yrisa@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Tarjeta 7: Foto a la izquierda | Texto a la derecha -->
-                <article class="about-row">
-                    <div class="image-block">
-                        <img src="img/Benny Polanco.jpeg" alt="Relacionista Público">
-                    </div>
-                    <div class="text-block">
-                        <h2>Rev. Benny Polanco</h2>
-                        <p>Relacionista Público</p>
-                        <p>2299 Loring Place N. Apto. 3</p>
-                        <p>Bronx, NY 10468</p>
-                        <p>Funciones : </p>
-                        <p>***************************************************</p>
-                    </div>
-                </article>
+                    <!-- Tarjeta 5: Síndico -->
+                    <article class="member-card-vertical">
+                        <div class="card-image-wrapper">
+                            <img src="img/Felix Perez.jpeg" alt="Sindico">
+                        </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Félix Pérez</h2>
+                            <div class="member-badge">Contador</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>felixperez@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
 
+                    <!-- Tarjeta 7: Relacionista Público -->
+                    <article class="member-card-vertical">
+                        <div class="card-image-wrapper">
+                            <img src="img/Benny Polanco.jpeg" alt="Relacionista Público">
+                        </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Rev. Benny Polanco</h2>
+                            <div class="member-badge">Relacionista Público</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>bpolanco@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
             </div>
         </section>
 
-        <!-- 2da Sección: Vocales de la junta (6 Tarjetas) -->
-        <section class="section">
+        <!-- 2da Sección: Vocales de la junta (Grilla de 3 Columnas) -->
+        <section class="section" style="margin-top: 60px;">
             <h2 class="page-title text-center">Vocales</h2>
             <br>
-            <br>
-            <div class="about-segments">
+            <div class="hierarchy-grid-3">
                 
-                <!-- Tarjeta 1: Foto a la izquierda | Texto a la derecha -->
-                <article class="about-row">
-                    <div class="image-block">
-                        <img src="img/Sara Medrano.jpeg" alt="Vocal">
+
+                <!-- Vocal 3 -->
+                <article class="member-card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="img/Yoel Olivo.jpg" alt="Vocal">
                     </div>
-                    <div class="text-block">
-                        <h2>Sara Medrano</h2>
-                        <p>Vocal</p>
-                        <p>3130 Irwin Ave. Suite 9F.</p>
-                        <p>Bronx , NY, 10463</p>
-                        <p>Funciones : </p>
-                        <p>*******************************************</p>
-                    </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Yoel Olivo</h2>
+                            <div class="member-badge">Vocal</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>yoelolivo@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
                 </article>
 
-                <!-- Tarjeta 2: Texto a la izquierda | Foto a la derecha -->
-                <article class="about-row reverse">
-                    <div class="image-block">
-                        <img src="user.jpeg" alt="Segundo Vocal Principal">
+                <!-- Vocal 1 -->
+                <article class="member-card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="img/Sara Medrano.jpg" alt="Vocal">
                     </div>
-                    <div class="text-block">
-                        <h2>Norma Polanco</h2>
-                        <p>Vocal</p>
-                        <p>2299 Loring Place N. Apto. 3</p>
-                        <p>Bronx, NY 10468</p>
-                        <p>Funciones : </p>
-                        <p>**********************************************</p>
-                    </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Sara Medrano</h2>
+                            <div class="member-badge">Vocal</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>rmedrano@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
                 </article>
 
-                <!-- Tarjeta 3: Foto a la izquierda | Texto a la derecha -->
-                <article class="about-row">
-                    <div class="image-block">
-                        <img src="img/Yoel Olivo.jpeg" alt="Vocal">
+                <!-- Vocal 2 -->
+                <article class="member-card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="user.jpeg" alt="Vocal">
                     </div>
-                    <div class="text-block">
-                        <h2>Yoel Olivo</h2>
-                        <p>Vocal</p>
-                        <p>120 West 176 St. Apto. 2D</p>
-                        <p>Bronx, NY 10453</p>
-                        <p>Funciones : </p>
-                        <p>**********************************************</p>
-                    </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Norma Polanco</h2>
+                            <div class="member-badge">Vocal</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>naherrerapolanco@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
                 </article>
 
-                <!-- Tarjeta 4: Texto a la izquierda | Foto a la derecha -->
-                <article class="about-row reverse">
-                    <div class="image-block">
-                        <img src="img/Bernardo Santana.jpeg" alt="Primer Vocal Suplente">
+                <!-- Vocal 4 -->
+                <article class="member-card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="user.jpeg" alt="Vocal">
                     </div>
-                    <div class="text-block">
-                        <h2>Luis Bernardo Santana</h2>
-                        <p>Vocal</p>
-                        <p>18 Saint Nicholas Place, apto. 3E</p>
-                        <p>New York, NY 10032</p>
-                        <p>Funciones : </p>
-                        <p>**********************************************</p>
-                    </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Luis Bernardo Santana</h2>
+                            <div class="member-badge">Vocal</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>bsantana@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
                 </article>
 
-                <!-- Tarjeta 5: Foto a la izquierda | Texto a la derecha -->
-                <article class="about-row">
-                    <div class="image-block">
-                        <img src="img/Rosalía Calixto.jpeg" alt="Vocal">
+                <!-- Vocal 5 -->
+                <article class="member-card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="img/Rosalía Calixto.jpg" alt="Vocal">
                     </div>
-                    <div class="text-block">
-                        <h2>Rosalía Calixto</h2>
-                        <p>Vocal</p>
-                        <p>546W 146 St. Apt. 54</p>
-                        <p>New York, NY 10031</p>
-                        <p>Funciones : </p>
-                        <p>*********************************************</p>
-                    </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Rosalía Calixto</h2>
+                            <div class="member-badge">Vocal</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>rcalixto@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
                 </article>
 
-                <!-- Tarjeta 6: Texto a la izquierda | Foto a la derecha -->
-                <article class="about-row reverse">
-                    <div class="image-block">
+                <!-- Vocal 6 -->
+                <article class="member-card-vertical">
+                    <div class="card-image-wrapper">
                         <img src="img/Mario Javier de León.jpeg" alt="Vocal">
                     </div>
-                    <div class="text-block">
-                        <h2>Mario Javier De León</h2>
-                        <p>Vocal</p>
-                        <p>505 W, 187 St. Apt. 43</p>
-                        <p>New York, NY. 10033.</p>
-                        <p>Funciones : </p>
-                        <p>*******************************************</p>
-                    </div>
+                        <div class="card-text-wrapper member-card-info">
+                            <h2 class="member-name">Mario Javier De León</h2>
+                            <div class="member-badge">Vocal</div>
+                            <ul class="member-details-list">
+                                <li>
+                                    <i class="fa-solid fa-square-phone"></i>
+                                    <span>(***) ***-****</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span><strong>mjavier@fundacire.org</strong></span>
+                                </li>
+                            </ul>
+                        </div>
                 </article>
 
             </div>
         </section>
 
     </main>
-
-    
-
-
 
     <footer class="footer">
         <div class="container footer-grid">
