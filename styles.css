@@ -1,0 +1,815 @@
+/* ===================================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+   =================================================== */
+:root {
+    --primary-blue: #2563eb;
+    --pastel-blue-bg: #eff6ff;
+    --pastel-blue-card: #dbeafe;
+    --primary-red: #dc2626;
+    --pastel-red: #fee2e2;
+    --primary-gold: #d97706;
+    --pastel-gold-bg: #fef3c7;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-padding {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.text-center { text-align: center; }
+.w-100 { width: 100%; }
+
+/* ===================================================
+   NAVBAR DINÁMICA (STICKY/FIXED) & ESTILOS DE LOS <li>
+   =================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    box-shadow: var(--shadow-md);
+    padding: 5px 0;
+}
+
+.nav-container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text .title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    line-height: 1.1;
+}
+
+.logo-text .subtitle {
+    font-size: 0.75rem;
+    color: var(--primary-gold);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Contenedor azul corporativo en cada <li> */
+.nav-links > li {
+    background-color: var(--primary-blue);
+    border-radius: 6px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Efecto Hover: Cambio de color al pasar el mouse por la opción */
+.nav-links > li:hover {
+    background-color: var(--primary-gold); /* Cambia al color dorado corporativo */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Enlaces dentro de los li */
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Texto blanco para resaltar sobre el fondo azul */
+    font-weight: 600;
+    padding: 8px 16px;
+    display: block;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+}
+
+/* Excepción para el botón de donar (mantiene su propio color destacado o hereda estilo) */
+.nav-links li:has(.btn-donate-nav) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.nav-links li:has(.btn-donate-nav):hover {
+    transform: none;
+}
+
+.btn-donate-nav {
+    background-color: var(--primary-gold);
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600 !important;
+}
+
+.btn-donate-nav:hover {
+    background-color: #b45309 !important;
+}
+
+/* Excepción para el contenedor de Webmail */
+.nav-links li:has(.nav-webmail-btn) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.nav-links li:has(.nav-webmail-btn):hover {
+    transform: none;
+}
+
+/* ===================================================
+   HERO SECTION OPTIMIZADO
+   =================================================== */
+.hero {
+    position: relative;
+    min-height: 85vh;
+    background: url('banner.png') center center / cover no-repeat; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 60px;
+    padding: 40px 0 0 0;
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.hero-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+.hero-main-wrapper {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 2vw; 
+    width: 100%;
+    max-width: 100% !important; 
+    margin: 0 auto;
+    padding: 0 4vw; 
+}
+
+.hero-logo {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hero-logo img {
+    width: 100%;
+    max-width: 320px; 
+    height: auto;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.hero-content {
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+.hero-content h1.hero-title-blue {
+    font-size: clamp(4rem, 11vw, 13.5rem); 
+    font-weight: 900;
+    color: var(--primary-blue);
+    margin: 0;
+    line-height: 0.95;
+    white-space: nowrap; 
+    text-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #f1f5f9;
+}
+
+/* ===================================================
+   HERO - SUBTÍTULOS EXTERNOS DEBAJO DE FUNDACIRE
+   =================================================== */
+.hero-external-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.hero-external-titles p.hero-main-subtitle {
+    color: var(--primary-blue);
+    font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-external-titles p.hero-main-center-desc {
+    color: #0f172a;
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+}
+
+/* ===================================================
+   CAJA TRANSLÚCIDA INFERIOR (UNA SOLA LÍNEA, AZUL Y MANUSCRITA)
+   =================================================== */
+.hero-translucent-box {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(5px);
+    padding: 18px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
+}
+
+.hero-translucent-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100% !important;
+    padding: 0 10px;
+}
+
+.hero-translucent-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-translucent-box p.p-italic-blue {
+    color: var(--primary-blue) !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    font-size: clamp(0.9rem, 1.4vw, 1.3rem) !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Script', cursive, sans-serif !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-bottom-button-container {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%;
+    margin-top: 20px;   
+    margin-bottom: 40px; 
+}
+
+.hero-bottom-button-wrapper {
+    max-width: 650px; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* ===================================================
+   BOTONES GENERALES
+   =================================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-primary { background-color: var(--primary-gold); color: white; }
+.btn-primary:hover { background-color: #b45309; }
+.btn-secondary { background-color: var(--pastel-blue-card); color: var(--primary-blue); }
+.btn-secondary:hover { background-color: #bfdbfe; }
+
+/* ===================================================
+   LAYOUT GRID & SECCIONES
+   =================================================== */
+.section { padding: 70px 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.bg-pastel-blue { background-color: var(--pastel-blue-bg); }
+.bg-pastel-blue-light { background-color: #f0f7ff; }
+.bg-pastel-gold-light { background-color: #fffbeb; }
+
+.image-block img { width: 100%; border-radius: 10px; box-shadow: var(--shadow-md); }
+
+/* Tarjetas */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 15px; }
+
+/* Blog Layout */
+.blog-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+.post-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm); margin-bottom: 25px; }
+.post-card img { width: 100%; height: 250px; object-fit: cover; }
+.post-content { padding: 20px; }
+.post-date { font-size: 0.85rem; color: var(--text-muted); display: block; margin: 8px 0; }
+
+.blog-sidebar .sidebar-widget { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+.widget-list { list-style: none; margin-top: 10px; }
+.widget-list li { margin-bottom: 8px; }
+.widget-list a { text-decoration: none; color: var(--text-dark); }
+
+/* Formulario & Donaciones */
+.contact-donation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.form-container { padding: 30px; border-radius: 10px; box-shadow: var(--shadow-sm); }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: 600; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;
+}
+
+.qr-code { width: 160px; height: 160px; margin: 15px 0; }
+
+/* Footer */
+.footer { background-color: #0f172a; color: #94a3b8; padding-top: 50px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; padding-bottom: 40px; }
+.footer-col h4 { color: white; margin-bottom: 15px; }
+.social-links a { color: white; font-size: 1.2rem; margin-right: 12px; }
+.footer-links { list-style: none; }
+.footer-links a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 8px; }
+.highlight-link { color: var(--primary-gold) !important; font-weight: bold; }
+.footer-bottom { border-top: 1px solid #1e293b; text-align: center; padding: 20px 0; font-size: 0.85rem; }
+
+/* Botón Flotante de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    color: white;
+}
+
+/* Páginas Independientes Contacto y Donaciones */
+.subtitle-page {
+    color: var(--text-muted);
+    margin-top: -10px;
+    margin-bottom: 40px;
+}
+
+.contact-page-grid,
+.donations-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.contact-info-container,
+.donation-card {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    background: white;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.header-icon {
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+}
+
+.bank-details-list p {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 8px;
+}
+
+.qr-container {
+    margin: 20px 0;
+}
+
+.transparency-banner {
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.transparency-banner h3 {
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+
+/* ===================================================
+   BOTÓN DE WEBMAIL - TAMAÑO Y ALTURA IGUAL AL RESTO DE LIS
+   =================================================== */
+.nav-webmail-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-webmail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Altura y padding idénticos a los enlaces de los demás <li> para que tengan el mismo alto visual */
+    height: 100%;
+    padding: 8px 16px; 
+    background-color: transparent !important;
+    color: var(--primary-blue) !important; /* Azul corporativo por defecto */
+    border-radius: 0;
+    font-size: 1.25rem; /* Ícono más grande */
+    box-shadow: none !important;
+    transition: var(--transition);
+}
+
+/* Al pasar el mouse, el ícono cambia al color dorado corporativo */
+.nav-webmail-btn:hover {
+    background-color: transparent !important;
+    color: var(--primary-gold) !important;
+    transform: none;
+    box-shadow: none !important;
+}
+
+/* Reset para el contenedor li de webmail */
+.nav-links li:has(.nav-webmail-btn) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.nav-links li:has(.nav-webmail-btn):hover {
+    transform: none;
+}
+
+/* Tooltip (Mensaje Desplegable) */
+.webmail-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    background-color: var(--text-dark);
+    color: white;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.webmail-tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--text-dark) transparent;
+}
+
+.nav-webmail-wrapper:hover .webmail-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===================================================
+   ESTILOS PARA LOS SEGMENTOS "NOSOTROS"
+   =================================================== */
+.about-segments {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.about-row .text-block,
+.about-row .image-block {
+    flex: 1;
+}
+
+.about-row.reverse {
+    flex-direction: row-reverse;
+    transform: translateX(80px);
+}
+
+.about-row.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-row .image-block img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+}
+
+.about-row .text-block h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.about-row .text-block p {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ===================================================
+   MENÚ HAMBURGUESA Y RESPONSIVE GENERAL
+   =================================================== */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1002;
+}
+
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block !important;
+    }
+
+    .nav-links {
+        display: none !important;
+    }
+
+    #navMenu {
+        display: none;
+    }
+
+    #navMenu.active {
+        display: block !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        border-top: 1px solid #f1f5f9;
+        z-index: 1001;
+    }
+
+    #navMenu.active .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .nav-links li {
+        width: 85%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content h1.hero-title-blue {
+        font-size: 3.5rem;
+        white-space: normal;
+    }
+
+    .hero-logo {
+        justify-content: center;
+    }
+
+    .hero-logo img {
+        max-width: 180px;
+    }
+
+    .hero-translucent-container {
+        justify-content: center;
+    }
+
+    .hero-translucent-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .hero-bottom-button-container {
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .hero-bottom-button-wrapper {
+        justify-content: center;
+    }
+    
+    .hero-translucent-box p.p-italic-blue {
+        white-space: normal !important; 
+        font-size: 0.95rem !important;
+    }
+
+    .about-row,
+    .about-row.reverse {
+        flex-direction: column !important;
+        gap: 18px;
+        transform: translateY(30px);
+    }
+
+    .about-row.visible {
+        transform: translateY(0);
+    }
+
+    .about-row .image-block {
+        width: 100%;
+        max-width: 280px; 
+        margin: 0 auto;
+    }
+
+    .about-row .image-block img {
+        height: 250px;
+    }
+
+    .about-row .text-block {
+        text-align: center; 
+        width: 100%;
+    }
+
+    .about-row .text-block h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+}

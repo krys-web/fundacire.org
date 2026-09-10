@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donaciones - FUNDACIRE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Sticky / Fixed -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="FUNDACIRE Logo">
+                <div class="logo-text">
+                    <span class="title">Ciudad Refugio</span>
+                    <span class="subtitle">FUNDACIRE</span>
+                </div>
+            </a>
+
+        <!-- Botón del menú desplegable para móviles/tablets -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+            <nav id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html#nosotros">Qué es Fundacire</a></li>
+                    <li><a href="index.html#somos">Quienes somos</a></li> 
+
+                    <li class="nav-webmail-wrapper">
+                        <a href="https://www.fundacire.org/webmail" target="_blank" rel="noopener noreferrer" class="nav-webmail-btn" aria-label="Correo Electrónico">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span class="webmail-tooltip">Correo electrónico</span>
+                        </a>
+                    </li>
+
+                    <li><a href="donaciones.html" class="btn-donate-nav">Donar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container page-padding">
+        <h1 class="page-title text-center">Haga su Donación</h1>
+        <p class="text-center subtitle-page">"El alma generosa será prosperada; Y el que saciare, él también será saciado."</p>
+        <h3>(Proverbios 11:25)</h3>
+        <div class="donations-page-grid">
+            
+            <!-- Transferencia Bancaria -->
+            <section class="donation-card bg-pastel-blue-light">
+                <div class="card-header">
+                    <i class="fa-solid fa-building-columns header-icon"></i>
+                    <h2>Transferencia Bancaria</h2>
+                </div>
+                <div class="bank-details-list">
+                    <p><strong>Banco:</strong> Banco del Estado</p>
+                    <p><strong>Tipo de Cuenta:</strong> Cuenta Corriente</p>
+                    <p><strong>Número de Cuenta:</strong> 2100XXXXXX</p>
+                    <p><strong>Titular:</strong> Fundación Ciudad Refugio (FUNDACIRE)</p>
+                    <p><strong>RUC / Identificación:</strong> 1790000000001</p>
+                    <p><strong>Correo para comprobantes:</strong> donaciones@fundacire.org</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Banner de Transparencia -->
+        <section class="transparency-banner bg-pastel-blue">
+            <h3><i class="fa-solid fa-shield-heart"></i> Transparencia y Compromiso</h3>
+            <p>El 100% de los fondos recaudados es destinado a la gestión, ejecución y sostenibilidad de nuestros programas educativos, de salud y asistencia comunitaria.</p>
+        </section>
+    </main>
+
+    <!-- Footer Compartido -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <p>Mantente al tanto de nuestros proyectos sociales en redes:</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Ubicación</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 3130 Irwin Ave. Room 9F – Bronx, NY 10463</p>
+                <p><i class="fa-solid fa-envelope"></i> contacto@fundacire.org</p>
+                <p><i class="fa-solid fa-phone"></i> (917) 607 9346</p>
+            </div>
+            <div class="footer-col">
+                <h4>Ayuda Rápida</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="contacto.html">Contáctanos Directo</a></li>
+                    <li><a href="donaciones.html" class="highlight-link">DONAR AHORA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fundación Ciudad Refugio (FUNDACIRE). Todos los Derechos Reservados.</p>
+            <p>Diseñado por: KRYSWEB | <a href="https://www.krysweb.com/" target="_blank">Visitar Sitio</a></p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/19176079346?text=Hola,%20deseo%20más%20información%20sobre%20la%20Fundación%20Ciudad%20Refugio" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
