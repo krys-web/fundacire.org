@@ -117,7 +117,7 @@ html, body {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 15px;
+    gap: 60px;
 }
 
 /* Contenedor azul corporativo en cada <li> */
@@ -188,7 +188,7 @@ html, body {
 .hero {
     position: relative;
     min-height: 85vh;
-    background: url('banner.png') center center / cover no-repeat; 
+    background: url('img/fondo-hero.jpg') center center / cover no-repeat; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -423,6 +423,10 @@ html, body {
 .form-group label { display: block; margin-bottom: 6px; font-weight: 600; }
 .form-group input, .form-group textarea {
     width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;
+}
+/* Textarea fijo para evitar redimensionamiento del usuario */
+.form-group textarea {
+    resize: none;
 }
 
 .qr-code { width: 160px; height: 160px; margin: 15px 0; }
@@ -902,7 +906,7 @@ html, body {
     margin-top: 20px;
 }
 
-/* Estructura interna de cada tarjeta vertical (Imagen arriba, Texto abajo) */
+/* Estructura interna de cada tarjeta vertical (Imagen arriba completa, Texto abajo) */
 .member-card-vertical {
     background: #ffffff;
     border-radius: 12px;
@@ -919,19 +923,22 @@ html, body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor de la imagen arriba con proporción fija limpia */
+/* Contenedor de la imagen arriba adaptado para mostrarla completa */
 .member-card-vertical .card-image-wrapper {
     width: 100%;
-    height: 240px; /* Altura uniforme para todas las fotos */
+    height: auto; 
     overflow: hidden;
     background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .member-card-vertical .card-image-wrapper img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la foto llene el espacio sin deformarse */
-    object-position: top center;
+    height: auto;
+    object-fit: contain; /* Mantiene la foto completa sin recortar los bordes */
+    display: block;
 }
 
 /* Contenedor del texto debajo de la imagen */
