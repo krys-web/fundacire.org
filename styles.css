@@ -327,7 +327,7 @@ html, body {
     color: var(--primary-blue) !important;
     font-style: italic !important;
     font-weight: 700 !important;
-    font-size: clamp(1.2rem, 2.2vw, 1.8rem) !important;
+    font-size: clamp(1.2rem, 2.2vw, 1.9rem) !important;
     white-space: nowrap !important;
     overflow: hidden;
     text-overflow: ellipsis;
