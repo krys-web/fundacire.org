@@ -1032,3 +1032,21 @@ html, body {
         padding: 20px 15px 10px 15px;
     }
 }
+
+/* ===================================================
+   ESTILOS PARA LA REFERENCIA DE ZELLE EN DONACIONES
+   =================================================== */
+.zelle-paragraph {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.zelle-icon {
+    height: 24px;       
+    width: auto;
+    object-fit: contain;
+    border-radius: 4px; 
+    vertical-align: middle;
+}
